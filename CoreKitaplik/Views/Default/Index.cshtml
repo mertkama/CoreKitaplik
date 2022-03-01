@@ -1,0 +1,25 @@
+﻿@model List<CoreKitaplik.Models.Kitaplar>
+
+<link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>KİTAP ADI</th>
+        <th>YAZAR</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.ID</td>
+            <td>@k.KitapAd</td>
+            <td>@k.Yazar</td>
+        </tr>
+    }
+</table>
+
+<h2>Gelecek Kitaplar</h2>
+@await Component.InvokeAsync("YeniKitaplar")
+<br />
+@Html.Partial("_PartialPage")
+
